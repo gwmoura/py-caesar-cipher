@@ -1,7 +1,7 @@
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-cifred = "DEFGHIJKLMNOPQRSTUVWXYZABC"
 
-def decrypt(phrase):
+def decrypt(phrase, rotation = 3):
+	cifred = alphabet[rotation:]
 	new_prhase = ''
 	for letter in list(phrase.upper()):
 		pos = cifred.find(letter)
@@ -13,7 +13,8 @@ def decrypt(phrase):
 	return new_prhase
 
 
-def encrypt(phrase):
+def encrypt(phrase, rotation = 3):
+	cifred = alphabet[rotation:]
 	new_prhase = ''
 	for letter in list(phrase.upper()):
 		pos = alphabet.find(letter)
